@@ -1,0 +1,11 @@
+.env
+__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+.streamlit/
+target/
+dbt_packages/
+logs/
+SSH_for_UT_andmeinseneeria
+SSH_for_UT_andmeinseneeria.pub
