@@ -35,6 +35,18 @@ Kui suur osa majandustegevuseteate esitanud toitlustusettevõtetest hakkab reaal
 # 1. Klooni repo ja liigu kausta
 git clone <https://github.com/kaisu278/MTR_toitlustus_aktiivsus_analyys>
 cd <MTR_toitlustus_aktiivsus_analyys>
+
+# 2. Kopeeri keskkonnamuutujad
+cp .env.example .env
+Muuda .env failis paroolid ja muud seaded vastavalt vajadusele
+
+# 3. Kui sul juba pole, siis installi Mermaid CLI
+npm install -g @mermaid-js/mermaid-cli
+
+# 4. Käivita teenused
+docker compose up -d --build
+
+
 ```
 
 ## Meeskond
