@@ -71,28 +71,29 @@ graph LR
 
 ## Andmebaasi kihid
 
-| Kiht | Roll |
-| :--- | :--- |
-|      |
-
-...
+| Kiht    | Roll                                                        |
+| :------ | :---------------------------------------------------------- |
+| staging | Hoiab allika andmeid töötlemata kujul.                      |
+| mart    | Hoiab transformeeritud ja äriloogikat sisaldavaid tabeleid. |
+| quality | Hoiab kvaliteeditestide tulemusi.                           |
 
 ## Tööjaotus
 
-| Roll                       | Vastutus                                                  | Nimi         |
-| :------------------------- | :-------------------------------------------------------- | :----------- |
-| Andmeallika omanik         | Kirjutab sissevõtu loogika                                | Kaisa Eesmaa |
-| Transformatsioonide omanik | Kirjutab andmete ühendamise ja mõõdikute arvutuse loogika |
-| Kvaliteedi omanik          | Kirjutab testid ja vaatab läbi ebaõnnestunud testid       |
-| Näidikulaua omanik         | Ehitab vaate                                              |
+| Roll                       | Vastutus                                                  | Nimi            |
+| :------------------------- | :-------------------------------------------------------- | :-------------- |
+| Andmeallika omanik         | Kirjutab sissevõtu loogika                                | Kaisa Eesmaa    |
+| Transformatsioonide omanik | Kirjutab andmete ühendamise ja mõõdikute arvutuse loogika | Aare Järvan     |
+| Kvaliteedi omanik          | Kirjutab testid ja vaatab läbi ebaõnnestunud testid       | Anne-Mai Ilumäe |
+| Näidikulaua omanik         | Ehitab vaate                                              | Juta Luts       |
 
 ## Riskid
 
-| Risk                                 | Mõju                                                       | Maandus                                                    |
-| ------------------------------------ | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| Võrgupäring ei vasta                 | Andmeid ei saa värskendada                                 | Skript annab veateate, vajadusel käivitata uuesti.         |
-| MTA uuendab andmeid korra kvartalis  | Värskete majandustegevusteadete kohta ei saa analüüsi teha | Leppida või leida teine infoalllikas                       |
-| MTR muudab CSV faili andmestruktuuri | Andmeid ei saa värskendada                                 | Skript annab veateate, parandada skripti, käivitada uuesti |
+| Risk                                 | Mõju                                                       | Maandus                                                                                           |
+| ------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Võrgupäring ei vasta                 | Andmeid ei saa värskendada                                 | Skript annab veateate, vajadusel käivitata uuesti.                                                |
+| MTA uuendab andmeid korra kvartalis  | Värskete majandustegevusteadete kohta ei saa analüüsi teha | Leppida või leida teine infoallikas - küsimus, kui suur vajadus on üldse värskete andmete järele? |
+| MTR muudab CSV faili andmestruktuuri | Andmeid ei saa värskendada                                 | Skript annab veateate, parandada skripti, käivitada uuesti                                        |
+| MTA muudab CSV faili andmestruktuuri | Andmeid ei saa värskendada                                 | Skript annab veateate, parandada skripti, käivitada uuesti                                        |
 
 ## Privaatsus ja turve
 
