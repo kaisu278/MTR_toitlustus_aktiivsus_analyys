@@ -13,7 +13,13 @@ CLEAN_FILE = DATA_DIR / "tasutud_maksud_varasemad_aastad_puhas.csv"
 try:
     print("Laen faili alla...")
 
-    response = requests.get(url, timeout=300, stream=True)
+    session = requests.Session()
+
+    response = session.get(
+        url,
+        timeout=300,
+        stream=True
+    )
     response.raise_for_status()
 
     with open(RAW_FILE, "wb") as file:

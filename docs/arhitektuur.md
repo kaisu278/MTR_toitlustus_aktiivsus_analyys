@@ -6,8 +6,8 @@ Kui suur osa majandustegevuseteate esitanud toitlustusettevõtetest hakkab reaal
 
 ### Mõõdikud:
 
-1. Osakaal majandustegevusteate esitanud isikutest, kes deklareerivad töötajaid MTA andmetel (grupid: varasemalt töötajad, kuni 3 kuud, 4-6 kuud, 6-12 kuud, üle 12 kuu)
-2. Osakaal majandustegevusteate esitanud isikutest, kes deklareerivad käivet MTA andmetel (grupid: varasemalt töötajad, kuni 3 kuud, 4-6 kuud, 6-12 kuud, üle 12 kuu)
+1. Osakaal majandustegevusteate esitanud isikutest, kes deklareerivad töötajaid MTA andmetel (grupid: varasemalt töötajad, sama kvartal, järgmine kvartal, 3-4 kvartalil, üle aasta)
+2. Osakaal majandustegevusteate esitanud isikutest, kes deklareerivad käivet MTA andmetel (grupid: varasemalt käive, sama kvartal, järgmine kvartal, 3-4 kvartalil, üle aasta)
 
 ## Andmeallikad
 

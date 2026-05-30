@@ -28,6 +28,12 @@ df_valitud = df_valitud.rename(columns={
     "load_luba_kehtiv_kuni": "kehtiv_kuni"
 })
 
+# Lisa aasta veerg
+df_valitud["aasta"] = pd.to_datetime(
+    df_valitud["kehtiv_alates"],
+    errors="coerce"
+).dt.year
+
 df_valitud.to_csv(
     OUTPUT_FILE,
     index=False,
