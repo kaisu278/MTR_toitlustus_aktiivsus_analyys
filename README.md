@@ -13,11 +13,11 @@ Kui suur osa majandustegevuseteate esitanud toitlustusettevõtetest hakkab reaal
 
 ## Andmeallikad
 
-| Allikas                                                                  | tüüp      | Uuenemise aeg    | Roll          |
-| :----------------------------------------------------------------------- | :-------- | :--------------- | :------------ |
-| Majandustegevuse register                                                | andmebaas | reaalajas uuenev | põhiandmevoog |
-| Maksu- ja Tolliameti avaandmed tasutud maksude, käibe ja töötajate kohta | fail      | korra kvartalis  | põhiandmevoog |
-
+| Allikas                                                                                       | tüüp      | Uuenemise aeg    | Roll          |
+| :-------------------------------------------------------------------------------------------- | :-------- | :--------------- | :------------ |
+| Majandustegevuse registeri avaandmed                                                                     | fail | reaalajas uuenev | põhiandmevoog |
+| Maksu- ja Tolliameti avaandmed tasutud maksude, käibe ja töötajate kohta käesoleval aastal    | fail      | korra kvartalis  | põhiandmevoog |
+| Maksu- ja Tolliameti avaandmed tasutud maksude, käibe ja töötajate kohta varasematel aastatel | fail      | ei uuene         | lisaandmevoog |
 ## Andmestik
 
 ## Stack
@@ -40,12 +40,51 @@ cd <MTR_toitlustus_aktiivsus_analyys>
 cp .env.example .env
 Muuda .env failis paroolid ja muud seaded vastavalt vajadusele
 
-# 3. Kui sul juba pole, siis installi Mermaid CLI
+# 3. Kui sul juba pole, siis installi Mermaid CLI, python requests
 npm install -g @mermaid-js/mermaid-cli
+pip install requests
+pip install requests pandas
+
 
 # 4. Käivita teenused
 docker compose up -d --build
 
+# 5. Lae alla majandustegevusregistri avaandmed
+python scripts\01_MTR_alusandmed.py
+
+# 6. Tee XML tabelist CSV fail ja filtreeri välja ainult majandustegevsuteated toitlustamise tegevusalal
+python scripts\02_MTR_to_csv.py
+
+# 7. Lae alla MTA andmed tasutud maksude, käibe ja töötajate kohta jooksva perioodi kohta
+python scripts\03_MTA_jooksvad_alusandmed.py
+
+# 8. Lae alla MTA andmed tasutud maksude, käibe ja töötajate kohta varasema perioodi kohta
+python scripts\04_MTA_varasemad_alusandmed.py
+
+# 9. Tee MTR andmetest puhastatud tabel, kus on ainult olulised andmed
+python scripts\05_MTR_andmete_puhastamine.py
+
+# 10. Loo ühendus andmebaasiga
+docker compose exec db psql -U praktikum -d praktikum
+
+# 11. Loo tabelid ja lae sissetõmmatud andmed dockerisse
+\i /scripts/06_uute_tabelite_laadimine.sql
+
+# 12. Tee MTA andmetest tabelid, kus on ainult MTR toitlustuse majandustegevusteate esitanud isikute andmed
+\i /scripts/07_MTR_MTA_andmed_juurde.sql
+
+# 13. Pane MTA andmetega tabelid kokku
+ \i /scripts/08_MTR_MTA_andmed_kokku.sql
+
+
+# Otsad kokku
+\q
+Kui soovid praktikumis tööle joone alla tõmmata, peata konteiner:
+
+docker compose down
+Kui soovid kustutada ka andmemahu:
+
+docker compose down -v
 
 ```
 
