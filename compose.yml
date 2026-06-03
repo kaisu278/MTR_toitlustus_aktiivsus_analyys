@@ -18,7 +18,33 @@ services:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 10s
       retries: 5
+  
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    container_name: MTR-toitlustus-python
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_USER: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      DB_NAME: ${POSTGRES_DB}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/data
+      - ./scripts:/scripts
+    working_dir: /scripts
+    tty: true
+    command: streamlit run app.py --server.address=0.0.0.0
 
+  
 volumes:
   MTR_toitlustus_base:
     name: MTR-toitlustus-base-pgdata

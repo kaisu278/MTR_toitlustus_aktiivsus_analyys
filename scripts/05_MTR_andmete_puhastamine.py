@@ -1,10 +1,9 @@
 from pathlib import Path
 import pandas as pd
 
-DATA_DIR = Path("data")
 
-INPUT_FILE = DATA_DIR / "mtr_toitlustus_majandustegevusteated.csv"
-OUTPUT_FILE = DATA_DIR / "mtr_toitlustus_puhas.csv"
+INPUT_FILE = "/data/mtr_toitlustus_majandustegevusteated.csv"
+OUTPUT_FILE = "/data/mtr_toitlustus_puhas.csv"
 
 df = pd.read_csv(
     INPUT_FILE,

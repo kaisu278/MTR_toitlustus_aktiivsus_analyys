@@ -2,9 +2,9 @@ from pathlib import Path
 import pandas as pd
 import xml.etree.ElementTree as ET
 
-DATA_DIR = Path("data")
-XML_FILE = DATA_DIR / "avaandmed_ettevotjad.xml"
-CSV_FILE = DATA_DIR / "mtr_avaandmed_ettevotjad_load.csv"
+
+XML_FILE = "/data/avaandmed_ettevotjad.xml"
+CSV_FILE = "/data/mtr_avaandmed_ettevotjad_load.csv"
 
 def clean_tag(tag):
     return tag.split("}")[-1]
@@ -64,7 +64,7 @@ df_filtered = df[
     & (df["load_luba_tegevusala"] == "Toitlustamine")
 ]
 
-CSV_FILE = DATA_DIR / "mtr_toitlustus_majandustegevusteated.csv"
+CSV_FILE = "/data/mtr_toitlustus_majandustegevusteated.csv"
 
 df_filtered.to_csv(
     CSV_FILE,

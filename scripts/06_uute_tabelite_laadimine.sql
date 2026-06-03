@@ -6,7 +6,8 @@ CREATE TABLE mtr_toitlustus_puhas (
     nimi TEXT,
     staatus TEXT,
     kehtiv_alates DATE,
-    kehtiv_kuni DATE
+    kehtiv_kuni DATE,
+    aasta INTEGER
 );
 CREATE TABLE tasutud_maksud_kaesolev_aasta (
     andmete_seis TEXT,
