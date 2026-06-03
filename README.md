@@ -64,17 +64,32 @@ python scripts\04_MTA_varasemad_alusandmed.py
 # 9. Tee MTR andmetest puhastatud tabel, kus on ainult olulised andmed
 python scripts\05_MTR_andmete_puhastamine.py
 
-# 10. Loo ühendus andmebaasiga
+# 10. Tee MTR andmetest ettevalmistav tabel aastate kaupa jagamiseks
+python scripts/051_MTR_andmed_jagamiseks.py
+
+# 11. Loo ühendus andmebaasiga
 docker compose exec db psql -U praktikum -d praktikum
 
-# 11. Loo tabelid ja lae sissetõmmatud andmed dockerisse
+# 12. Loo tabelid ja lae sissetõmmatud andmed dockerisse
 \i /scripts/06_uute_tabelite_laadimine.sql
 
-# 12. Tee MTA andmetest tabelid, kus on ainult MTR toitlustuse majandustegevusteate esitanud isikute andmed
+# 13. Toitlustuslubadega ettevõtete tabeli loomine
+\i /scripts/061_toitlustus_jagamine_laadimine.sql
+
+# 14. Tee MTA andmetest tabelid, kus on ainult MTR toitlustuse majandustegevusteate esitanud isikute andmed
 \i /scripts/07_MTR_MTA_andmed_juurde.sql
 
-# 13. Pane MTA andmetega tabelid kokku
+# 15. Pane MTA andmetega tabelid kokku
  \i /scripts/08_MTR_MTA_andmed_kokku.sql
+
+# 16. Jaga lubade kehtivuse algusel aluse 3-ks tabeliks
+\i /scripts/09_andmete_jagamine_maksu.sql
+
+# 17. Koosta lõplikud tabelid
+\i /scripts/10_kokkuvõte.sql
+
+# 18. Ava brauseris dashboard
+http://localhost:8501
 
 
 # Otsad kokku
