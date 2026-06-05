@@ -15,7 +15,7 @@ Kui suur osa majandustegevuseteate esitanud toitlustusettevõtetest hakkab reaal
 
 | Allikas                                                                                       | tüüp      | Uuenemise aeg    | Roll          |
 | :-------------------------------------------------------------------------------------------- | :-------- | :--------------- | :------------ |
-| Majandustegevuse registeri avaandmed                                                                     | fail | reaalajas uuenev | põhiandmevoog |
+| Majandustegevuse registeri avaandm                                                            | fail      | reaalajas uuenev | põhiandmevoog |
 | Maksu- ja Tolliameti avaandmed tasutud maksude, käibe ja töötajate kohta käesoleval aastal    | fail      | korra kvartalis  | põhiandmevoog |
 | Maksu- ja Tolliameti avaandmed tasutud maksude, käibe ja töötajate kohta varasematel aastatel | fail      | ei uuene         | lisaandmevoog |
 ## Andmestik
@@ -82,7 +82,7 @@ docker compose exec db psql -U praktikum -d praktikum
 # 15. Pane MTA andmetega tabelid kokku
  \i /scripts/08_MTR_MTA_andmed_kokku.sql
 
-# 16. Jaga lubade kehtivuse algusel aluse 3-ks tabeliks
+# 16. Jaga lubade kehtivuse alguse alusel 3-ks tabeliks
 \i /scripts/09_andmete_jagamine_maksu.sql
 
 # 17. Koosta lõplikud tabelid
