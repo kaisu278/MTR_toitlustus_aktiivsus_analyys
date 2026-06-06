@@ -83,7 +83,7 @@ docker compose exec db psql -U praktikum -d praktikum
  \i /scripts/08_MTR_MTA_andmed_kokku.sql
 
 # 16. Jaga lubade kehtivuse alguse alusel 3-ks tabeliks
-\i /scripts/09_andmete_jagamine_maksu.sql
+\i /scripts/09_andmete_jagamine_maksu_algus.sql
 
 # 17. Koosta lõplikud tabelid
 \i /scripts/10_kokkuvõte.sql
