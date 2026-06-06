@@ -85,10 +85,14 @@ docker compose exec db psql -U praktikum -d praktikum
 # 16. Jaga lubade kehtivuse alguse alusel 3-ks tabeliks
 \i /scripts/09_andmete_jagamine_maksu_algus.sql
 
-# 17. Koosta lõplikud tabelid
+# 17. Kvaliteedikontrolli tabel loodmine. 
+# Kontrollib ja kirjutab probleemsed read eraldi tabelisse. Kontrollitavad reeglid: registrikood NOT NULL, töötajate arv >0, riiklikud maksud >0.
+\i /scripts/091_kvaliteedikontroll.sql
+
+# 18. Koosta lõplikud tabelid
 \i /scripts/10_kokkuvõte.sql
 
-# 18. Ava brauseris dashboard
+# 19. Ava brauseris dashboard
 http://localhost:8501
 
 
