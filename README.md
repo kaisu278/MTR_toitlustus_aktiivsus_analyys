@@ -50,7 +50,7 @@ chmod +x run_all.sh
 
 ## Andmevoog
 1. Sissevõtt - Majandustegevuse registri andmed saadakse MTR avaandmetest, mis uuenevad iga päev - https://andmed.eesti.ee/datasets/majandustegevuse-register. Maksu- ja Tolliameti andmed on kättesaadavad MTA kodulehelt - https://www.emta.ee/eraklient/amet-uudised-ja-kontakt/uudised-pressiinfo-statistika/statistika-ja-avaandmed#tasutud-maksud. Andmed loetakse sisse pythoni koodide abil. 
-2. Laadimine - MTR ja MTA andmed laetakse staging kihti. MTR avaandmed on XML kujul, need teisendati CSV formaati ja lisati juurde kehtivuse alguse aasta. MTA andmetabelitest filtreeriti välja ainult nende ettevõtete andmed, kellel on toitlustuse majandustegevusteatis esitatud. 
+2. Laadimine - MTR avaandmed on XML kujul, need teisendati CSV formaati ja lisati juurde kehtivuse alguse aasta. MTA andmetabelitest filtreeriti välja ainult nende ettevõtete andmed, kellel on toitlustuse majandustegevusteatis esitatud. 
 3. Transformatsioon - vaatluse alla on võetud aastad 2024 - 2026 ning nende aastate kohta tehti eraldi tabelid, kus on konkreetse aasta majandustegevusteatise esitanud ettevõtete MTA andmed. 
 4. Kvaliteedikontroll - kontrollitud, et registrikood ei oleks puudu ning töötajate arv või makstud maksude summa ei oleks negatiivne.
 5. Näidikulaud - välja on toodud jooksva aasta majandustegevusteatiste arv. Lisaks majandustegevusteatise esmakordselt esitanud ettevõtete arv, enne teatise kehtivuse algust töötajaid deklareerinud ja makse tasunud ettevõtete arv, jooksval aastal ja järgmisel aastal töötajaid deklareerinud ja makse tasunud ettevõtete arv. 
@@ -106,7 +106,7 @@ Projekt on väga primitiivne, sest kokku sattusid algajad. Võrreldud on aastate
 ### Mis edasi
 Võrdlus kvartalite kaupa, s.h aasta vahetuse arvestamine. 
 Eraldi võrdlus tasutud maksude, käibe ja töötajate kohta. 
-Prognoos eelnevate aastate andmete pinnalt, kui palju makse, töötajaid ja käivet võiks toitlustuse majandustegevusteate esitanud isikud edaspidi deklareerida. 
+Prognoos eelnevate aastate andmete pinnalt, kui palju makse, töötajaid ja käivet võiks toitlustuse majandustegevusteate esitanud isikud edaspidi deklareerida. Võimalik on veel lisada valikusse analüüsid piirkondade kaupa.
 
 ## Meeskond
 
