@@ -40,7 +40,11 @@ cp .env.example .env
 Muuda .env failis paroolid ja muud seaded vastavalt vajadusele
 
 # 3. Käivita projektitöö
+## Windows
 .\run_all.ps1
+## masOS/Linux
+chmod +x run_all.sh
+./run_all.sh
 
 ```
 
