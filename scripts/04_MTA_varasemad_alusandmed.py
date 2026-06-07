@@ -73,10 +73,6 @@ try:
     print(f"Puhastatud CSV loodud: {CLEAN_FILE}")
     print(f"Ridu: {len(df)}")
 
-    print("\nVEERUD:")
-    for col in df.columns:
-        print(col)
-
 except Exception as error:
     print("Faili töötlemisel tekkis viga:")
     print(error)

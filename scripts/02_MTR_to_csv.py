@@ -2,10 +2,12 @@ from pathlib import Path
 import pandas as pd
 import xml.etree.ElementTree as ET
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
 
-XML_FILE = "/data/avaandmed_ettevotjad.xml"
-CSV_FILE = "/data/mtr_avaandmed_ettevotjad_load.csv"
-
+XML_FILE = DATA_DIR / "avaandmed_ettevotjad.xml"
+CSV_FILE = DATA_DIR / "mtr_toitlustus_majandustegevusteated.csv"
+ 
 def clean_tag(tag):
     return tag.split("}")[-1]
 
@@ -64,8 +66,6 @@ df_filtered = df[
     & (df["load_luba_tegevusala"] == "Toitlustamine")
 ]
 
-CSV_FILE = "/data/mtr_toitlustus_majandustegevusteated.csv"
-
 df_filtered.to_csv(
     CSV_FILE,
     index=False,
@@ -76,9 +76,3 @@ df_filtered.to_csv(
 print(f"CSV loodud: {CSV_FILE}")
 print(f"Kirjeid enne filtrit: {len(df)}")
 print(f"Kirjeid pärast filtrit: {len(df_filtered)}")
-
-print("Veerud:")
-print(df_filtered.columns.tolist())
-
-print("\nESIMESED 10 RIDA:")
-print(df.head(10).to_string())

@@ -1,13 +1,13 @@
-DROP TABLE IF EXISTS mtr_toitlustus_puhas;
+DROP TABLE IF EXISTS mtr_toitlustus_jagamine;
 DROP TABLE IF EXISTS tasutud_maksud_kaesolev_aasta;
 DROP TABLE IF EXISTS tasutud_maksud_varasemad_aastad;
-CREATE TABLE mtr_toitlustus_puhas (
+CREATE TABLE mtr_toitlustus_jagamine (
     registrikood TEXT,
     nimi TEXT,
     staatus TEXT,
     kehtiv_alates DATE,
     kehtiv_kuni DATE,
-    aasta INTEGER
+    algus_a INTEGER
 );
 CREATE TABLE tasutud_maksud_kaesolev_aasta (
     andmete_seis TEXT,
@@ -59,8 +59,8 @@ CREATE TABLE tasutud_maksud_varasemad_aastad (
     tootajate_arv_iii_kv NUMERIC,
     tootajate_arv_iv_kv NUMERIC
 );
-COPY mtr_toitlustus_puhas
-FROM '/data/mtr_toitlustus_puhas.csv' WITH (
+COPY mtr_toitlustus_jagamine
+FROM '/data/mtr_toitlustus_jagamine.csv' WITH (
         FORMAT csv,
         HEADER true,
         DELIMITER ';',

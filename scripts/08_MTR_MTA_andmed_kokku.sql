@@ -1,7 +1,0 @@
-DROP TABLE IF EXISTS mtr_toitlustus_maksud_koik_aastad;
-CREATE TABLE mtr_toitlustus_maksud_koik_aastad AS
-SELECT *
-FROM mtr_toitlustus_maksud_kaesolev_aasta
-UNION ALL
-SELECT *
-FROM mtr_toitlustus_maksud_varasemad_aastad;
